@@ -2034,6 +2034,11 @@
       "resolved": "https://registry.npmjs.org/jsprim/-/jsprim-1.3.1.tgz",
       "dev": true
     },
+    "keycode": {
+      "version": "2.1.8",
+      "from": "keycode@>=2.1.7 <3.0.0",
+      "resolved": "https://registry.npmjs.org/keycode/-/keycode-2.1.8.tgz"
+    },
     "keymirror": {
       "version": "0.1.1",
       "from": "keymirror@>=0.1.0 <0.2.0",
@@ -2867,6 +2872,11 @@
       "from": "react@>=15.4.1 <16.0.0",
       "resolved": "https://registry.npmjs.org/react/-/react-15.4.1.tgz"
     },
+    "react-addons-css-transition-group": {
+      "version": "15.4.1",
+      "from": "react-addons-css-transition-group@latest",
+      "resolved": "https://registry.npmjs.org/react-addons-css-transition-group/-/react-addons-css-transition-group-15.4.1.tgz"
+    },
     "react-addons-shallow-compare": {
       "version": "15.4.1",
       "from": "react-addons-shallow-compare@>=15.4.1 <16.0.0",
@@ -2880,7 +2890,7 @@
     },
     "react-addons-transition-group": {
       "version": "15.4.1",
-      "from": "react-addons-transition-group@>=0.14.0 <0.15.0||>=15.0.0 <16.0.0",
+      "from": "https://registry.npmjs.org/react-addons-transition-group/-/react-addons-transition-group-15.4.1.tgz",
       "resolved": "https://registry.npmjs.org/react-addons-transition-group/-/react-addons-transition-group-15.4.1.tgz"
     },
     "react-base16-styling": {
@@ -2919,20 +2929,40 @@
       "from": "react-dom@>=15.4.1 <16.0.0",
       "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-15.4.1.tgz"
     },
+    "react-event-listener": {
+      "version": "0.4.0",
+      "from": "react-event-listener@>=0.4.0 <0.5.0",
+      "resolved": "https://registry.npmjs.org/react-event-listener/-/react-event-listener-0.4.0.tgz"
+    },
     "react-json-tree": {
       "version": "0.10.0",
       "from": "react-json-tree@>=0.10.0 <0.11.0",
       "resolved": "https://registry.npmjs.org/react-json-tree/-/react-json-tree-0.10.0.tgz"
+    },
+    "react-md": {
+      "version": "1.0.0",
+      "from": "react-md@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/react-md/-/react-md-1.0.0.tgz"
     },
     "react-modal": {
       "version": "1.6.4",
       "from": "react-modal@>=1.2.1 <2.0.0",
       "resolved": "https://registry.npmjs.org/react-modal/-/react-modal-1.6.4.tgz"
     },
+    "react-motion": {
+      "version": "0.4.7",
+      "from": "react-motion@>=0.4.5 <0.5.0",
+      "resolved": "https://registry.npmjs.org/react-motion/-/react-motion-0.4.7.tgz"
+    },
     "react-onclickoutside": {
       "version": "5.7.1",
       "from": "react-onclickoutside@>=5.0.1 <6.0.0",
       "resolved": "https://registry.npmjs.org/react-onclickoutside/-/react-onclickoutside-5.7.1.tgz"
+    },
+    "react-prop-types": {
+      "version": "0.4.0",
+      "from": "react-prop-types@>=0.4.0 <0.5.0",
+      "resolved": "https://registry.npmjs.org/react-prop-types/-/react-prop-types-0.4.0.tgz"
     },
     "react-pure-render": {
       "version": "1.0.2",
@@ -2955,6 +2985,11 @@
           "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.13.1.tgz"
         }
       }
+    },
+    "react-swipeable-views": {
+      "version": "0.7.11",
+      "from": "react-swipeable-views@>=0.7.10 <0.8.0",
+      "resolved": "https://registry.npmjs.org/react-swipeable-views/-/react-swipeable-views-0.7.11.tgz"
     },
     "react-timeago-titlefix": {
       "version": "3.1.1-fix1",
@@ -3802,6 +3837,11 @@
       "from": "verror@1.3.6",
       "resolved": "https://registry.npmjs.org/verror/-/verror-1.3.6.tgz",
       "dev": true
+    },
+    "warning": {
+      "version": "3.0.0",
+      "from": "warning@>=3.0.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/warning/-/warning-3.0.0.tgz"
     },
     "whatwg-fetch": {
       "version": "2.0.1",
