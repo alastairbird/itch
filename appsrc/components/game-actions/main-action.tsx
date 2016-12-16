@@ -4,7 +4,7 @@ import {connect} from "../connect";
 import * as classNames from "classnames";
 
 import Icon from "../icon";
-import TaskIcon from "../task-icon";
+import TaskIcon, {iconForTask} from "../task-icon";
 
 import format from "../../util/format";
 import downloadProgress from "../../util/download-progress";
@@ -40,6 +40,10 @@ class MainAction extends React.Component<IMainActionProps, void> {
       pressDownload, canBeBought, progress, task, action, animate, halloween} = this.props;
 
     let child: React.ReactElement<any> | null = null;
+    let label = "";
+    let icon = "";
+    let buttonType = "raised";
+
     if (task) {
       const {status, hint, statusTask} = this.status();
       const classes = classNames("state", "normal-state", {
@@ -48,32 +52,41 @@ class MainAction extends React.Component<IMainActionProps, void> {
 
       const realTask = statusTask || task;
 
-      child = <span className={classes} data-hint={hint}>
-        <TaskIcon task={realTask} animate={animate} action={action}/>
-        {status}
-        {cancellable
-        ? <span className="cancel-cross">
-          <Icon icon="cross"/>
-        </span>
-        : ""}
-      </span>;
+      // child = <span className={classes} data-hint={hint}>
+      //   <TaskIcon task={realTask} animate={animate} action={action}/>
+      //   {status}
+      //   {cancellable
+      //   ? <span className="cancel-cross">
+      //     <Icon icon="cross"/>
+      //   </span>
+      //   : ""}
+      // </span>;
+
+      label = status;
+      icon = iconForTask(realTask, action);
     } else {
       if (platformCompatible) {
         if (mayDownload) {
-          child = <span className="state">
-            <Icon icon="install"/>
-            {t("grid.item." + (pressDownload ? "review" : "install"))}
-          </span>;
+          // child = <span className="state">
+          //   <Icon icon="install"/>
+          //   {t("grid.item." + (pressDownload ? "review" : "install"))}
+          // </span>;
+          label = t("grid.item." + (pressDownload ? "review" : "install"));
+          icon = "install";
         } else if (canBeBought) {
-          child = <span className="state">
-            <Icon icon="shopping_cart"/>
-            {t("grid.item.buy_now")}
-          </span>;
+          // child = <span className="state">
+          //   <Icon icon="shopping_cart"/>
+          //   {t("grid.item.buy_now")}
+          // </span>;
+          label = t("grid.item.buy_now");
+          icon = "shopping_cart";
         }
       } else {
-        return <span className="state not-platform-compatible">
-          {t("grid.item.not_platform_compatible", {platform: format.itchPlatform(platform)})}
-        </span>;
+        // return <span className="state not-platform-compatible">
+        //   {t("grid.item.not_platform_compatible", {platform: format.itchPlatform(platform)})}
+        // </span>;
+        label = t("grid.item.not_platform_compatible", {platform: format.itchPlatform(platform)});
+        buttonType = "flat";
       }
     }
 
@@ -89,28 +102,29 @@ class MainAction extends React.Component<IMainActionProps, void> {
 
     const hint = this.hint();
 
-    const buttonClasses = classNames("main-action", {
-      "buy-now": (platformCompatible && !mayDownload && canBeBought),
-      "hint--top": !!hint,
-      branded,
-    });
-    const button = <div style={style} className={buttonClasses} onClick={(e) => this.onClick(e)} data-hint={hint}>
-      {child}
-    </div>;
+    // const buttonClasses = classNames("main-action", {
+    //   "buy-now": (platformCompatible && !mayDownload && canBeBought),
+    //   "hint--top": !!hint,
+    //   branded,
+    // });
+    // const button = <div style={style} className={buttonClasses} onClick={(e) => this.onClick(e)} data-hint={hint}>
+    //   {child}
+    // </div>;
 
-    if (!child) {
-      return <div/>;
-    }
+    // if (!child) {
+    //   return <div/>;
+    // }
 
     // return button;
 
     return <Button
-      raised
+      raised={buttonType === "raised"}
+      flat={buttonType === "flat"}
       primary
       onClick={(e: any) => this.onClick(e)}
       tooltipLabel={hint}
-      label="Main action"
-      iconClassName="icon icon-install"/>;
+      label={label}
+      iconClassName={`icon icon-${icon}`}/>;
   }
 
   hint () {

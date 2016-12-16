@@ -12,6 +12,8 @@ import {ILocalizer} from "../../localizer";
 import {IAction} from "../../constants/action-types";
 import {IActionsInfo} from "./types";
 
+const Button = require("react-md/lib/Buttons").default;
+
 class SecondaryActions extends React.Component<ISecondaryActionsProps, void> {
   render () {
     const {items, error} = listSecondaryActions(this.props);
@@ -32,9 +34,16 @@ class SecondaryActions extends React.Component<ISecondaryActionsProps, void> {
     const key = "" + label;
 
     const actionClasses = classNames("secondary-action", "hint--top", classes);
-    return <span key={key} className={actionClasses} onClick={() => dispatch(action)} data-hint={t.format(label)}>
-      <Icon icon={icon}/>
-    </span>;
+    // return <span key={key} className={actionClasses} onClick={() => dispatch(action)} data-hint={t.format(label)}>
+    //   <Icon icon={icon}/>
+    // </span>;
+
+    return <Button
+      icon
+      onClick={() => dispatch(action)}
+      tooltipLabel={t.format(label)}
+      iconClassName={`icon icon-${icon}`}
+    />;
   }
 }
 

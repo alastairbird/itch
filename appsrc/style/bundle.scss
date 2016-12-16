@@ -46,8 +46,9 @@
 @import '../../node_modules/react-md/src/scss/react-md';
 
 $md-light-theme: false;
-$md-primary-color: $accent-color !default;
-$md-secondary-color: $light-accent-color !default;
+
+$md-primary-color: $md-red-400;
+$md-secondary-color: $md-cyan-200;
 
 $md-font-icon-size: 20px;
 
