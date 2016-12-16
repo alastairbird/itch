@@ -95,6 +95,7 @@ class MainAction extends React.Component<IMainActionProps, void> {
     if (progress > 0) {
       style.backgroundImage = linearGradient(progress);
       style.borderColor = "#444";
+      style.width = "100%";
     } else if (halloween) {
       style.backgroundColor = colors.spooky;
       style.borderColor = colors.spookyLight;
@@ -102,22 +103,8 @@ class MainAction extends React.Component<IMainActionProps, void> {
 
     const hint = this.hint();
 
-    // const buttonClasses = classNames("main-action", {
-    //   "buy-now": (platformCompatible && !mayDownload && canBeBought),
-    //   "hint--top": !!hint,
-    //   branded,
-    // });
-    // const button = <div style={style} className={buttonClasses} onClick={(e) => this.onClick(e)} data-hint={hint}>
-    //   {child}
-    // </div>;
-
-    // if (!child) {
-    //   return <div/>;
-    // }
-
-    // return button;
-
     return <Button
+      style={style}
       raised={buttonType === "raised"}
       flat={buttonType === "flat"}
       primary

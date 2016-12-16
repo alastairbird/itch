@@ -22,6 +22,7 @@ class GameBrowserContextAction extends React.Component<IGameBrowserContextAction
       flat
       primary={icon === "uninstall"}
       label={t.format(label)}
+      iconClass={`icon icon-${icon}`}
       tooltipLabel={hint} tooltipPosition="top"
       onClick={() => dispatch(action)}/>;
   }
