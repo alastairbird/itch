@@ -18,6 +18,8 @@ import {IState, IDownloadItem, ICaveRecord, IGameUpdate} from "../../types";
 import {IAction, dispatcher} from "../../constants/action-types";
 import {ILocalizer} from "../../localizer";
 
+const Button = require("react-md/lib/Buttons").default;
+
 const linearGradient = (progress: number) => {
   let percent = (progress * 100).toFixed() + "%";
   let doneColor = "#414141";
@@ -100,7 +102,15 @@ class MainAction extends React.Component<IMainActionProps, void> {
       return <div/>;
     }
 
-    return button;
+    // return button;
+
+    return <Button
+      raised
+      primary
+      onClick={(e: any) => this.onClick(e)}
+      tooltipLabel={hint}
+      label="Main action"
+      iconClassName="icon icon-install"/>;
   }
 
   hint () {

@@ -1,4 +1,6 @@
 
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons|Roboto:400,500,700';
+
 @import '../../node_modules/hint.css/src/hint.scss';
 
 @import 'global-styles/emoji';
@@ -40,3 +42,13 @@
 
 @import 'pages/gate';
 @import 'pages/hub';
+
+@import '../../node_modules/react-md/src/scss/react-md';
+
+$md-light-theme: false;
+$md-primary-color: $accent-color !default;
+$md-secondary-color: $light-accent-color !default;
+
+$md-font-icon-size: 20px;
+
+@include react-md-everything;

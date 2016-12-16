@@ -9,19 +9,21 @@ import {ILocalizer} from "../localizer";
 
 import {IActionOpts} from "./game-actions/list-secondary-actions";
 
+const Button = require("react-md/lib/Buttons").default;
+
 class GameBrowserContextAction extends React.Component<IGameBrowserContextAction, void> {
   render () {
     const {t, dispatch, opts} = this.props;
     const {action, icon, hint, label, type = "action", classes = []} = opts;
-    const spanClasses = classNames("secondary-action", `type-${type}`, classes, {
-      ["hint--top"]: !!hint,
-    });
 
     const textLabel = "" + label;
 
-    return <span key={textLabel} className={spanClasses} data-hint={hint} onClick={() => dispatch(action)}>
-      <Icon icon={icon}/> {t.format(label)}
-    </span>;
+    return <Button
+      flat
+      primary={icon === "uninstall"}
+      label={t.format(label)}
+      tooltipLabel={hint} tooltipPosition="top"
+      onClick={() => dispatch(action)}/>;
   }
 }
 
